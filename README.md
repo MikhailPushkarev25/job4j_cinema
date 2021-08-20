@@ -15,12 +15,12 @@
 сервер обрабатывет и открывает страницу с оплатой моего места, далее ввожу свои данные
 и оплачиваю.
 
-![ScreenShot](image/images 1.png)
+![ScreenShot](images/(1).png)
 
-![ScreenShot](image/images 2.png)
+![ScreenShot](images/(2).png)
 
-![ScreenShot](image/images 3.png)
+![ScreenShot](images/(3).png)
 
-![ScreenShot](image/images 4.png)
+![ScreenShot](images/(4).png)
 
-![ScreenShot](image/images 5.png)
+![ScreenShot](images/(5).png)
