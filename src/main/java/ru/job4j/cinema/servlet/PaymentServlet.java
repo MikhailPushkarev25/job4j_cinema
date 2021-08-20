@@ -21,7 +21,7 @@ public class PaymentServlet extends HttpServlet {
         throws ServletException, IOException {
         Ticket ticket = GSON.fromJson(req.getReader(), Ticket.class);
         req.setCharacterEncoding("UTF-8");
-        boolean result = PsqlStore.instOf().createTicket(ticket);
+        String result = PsqlStore.instOf().createTicket(ticket) ? "success" : "fail";
         resp.getWriter().print(result);
     }
 }

@@ -10,10 +10,10 @@
 
     <title>Кинотеатр</title>
 </head>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
 <body>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -33,7 +33,7 @@
                 <label for="phone">Номер телефона</label>
                 <input type="text" class="form-control" id="phone" placeholder="Номер телефона">
             </div>
-            <button type="button" class="btn btn-success" onclick="accountSave()">Оплатить</button>
+            <button id="pay" type="button" class="btn btn-success">Оплатить</button>
         </form>
     </div>
 </div>
@@ -43,6 +43,9 @@
             const search = (new URL(document.location)).searchParams;
             document.querySelector('h3').innerText =
                 `Вы выбрали ряд ${search.get('row')}, место ${search.get('column')}. Сумма: 500 рублей.`;
+            $("#pay").click(function() {
+                accountSave()
+            });
         }
     );
 
@@ -84,7 +87,6 @@
         var result = 0;
         $.ajax({
             type: 'POST',
-            crossdomain: true,
             url: 'http://localhost:8080/cinemajob/account',
             data: JSON.stringify(account),
             success: function (data) {

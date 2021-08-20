@@ -97,7 +97,9 @@ public class PsqlStore implements Store {
     public boolean createTicket(Ticket ticket) {
         boolean rsl = false;
         try (Connection cn = pool.getConnection();
-             PreparedStatement ps =  cn.prepareStatement("INSERT INTO ticket (row, cell, account_id ) VALUES (?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS)
+             PreparedStatement ps =  cn.prepareStatement(
+                     "INSERT INTO ticket (row, cell, account_id ) VALUES (?, ?, ?)"
+                     , PreparedStatement.RETURN_GENERATED_KEYS)
         ) {
             ps.setInt(1, ticket.getRow());
             ps.setInt(2, ticket.getCell());

@@ -6,14 +6,14 @@ import ru.job4j.cinema.model.Ticket;
 public class MainPsql {
     public static void main(String[] args) {
         Store store = PsqlStore.instOf();
-        store.createAccount(new Account(1, "Ac1", "8888"));
+        store.createAccount(new Account(2, "Ac1", "08880"));
         store.createTicket(new Ticket(1, 3,3,4));
         store.createTicket(new Ticket(2, 1,1,1));
         store.createTicket(new Ticket(3, 2,1,1));
         store.createTicket(new Ticket(4, 2,3,1));
         //System.out.println(ticket.getId());
         Account ac = store.findAccountById(1);
-        Ticket tic = store.findTicketById(1);
+        Ticket tic = store.findTicketById(2);
         System.out.println(ac.getUsername());
         System.out.println(tic.getRow() + " " + tic.getCell());
         for (Ticket ticket1 : store.findAllTickets()) {

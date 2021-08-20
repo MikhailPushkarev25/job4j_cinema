@@ -7,8 +7,20 @@
   <groupId>ru.job4j</groupId>
   <artifactId>job4j_cinema</artifactId>
   <version>1.0</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>13</source>
+          <target>13</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
-    <packaging>war</packaging>
+  <packaging>war</packaging>
 
   <name>job4j_cinema Maven Webapp</name>
 
@@ -43,6 +55,12 @@
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>42.2.9</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.4.15.Final</version>
     </dependency>
 
     <dependency>
